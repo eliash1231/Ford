@@ -1,0 +1,21 @@
+$carousel-item-heigh: 15rem;
+
+.carousel-item {
+    flex: 1%;
+    height: 35rem;
+    display: inline-block;
+    margin: 30px;
+
+    &-image {
+        width: 100%;
+        height: 40rem;
+        max-height: 30rem;
+        
+    }
+
+    &-tag {
+        position: relative;
+        bottom: -1rem;
+        left: 0rem;
+    }
+}

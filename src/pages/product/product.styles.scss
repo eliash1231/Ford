@@ -1,0 +1,152 @@
+.product-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffffff;
+
+    &-body {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 3rem;
+        align-items: stretch;
+        background: linear-gradient(135deg, rgba(13, 105, 145, 0.486), rgba(157, 16, 16, 0.519));
+
+    }
+
+    &-carousel,
+    &-detail-wrapper {
+        display: flex;
+        width: 50%;
+        padding: 1rem;
+        height: max-content;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            height: calc(65vh - 18px);
+            // aspect-ratio: 2 / 1;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-detail-price-wrapper {
+        display: flex;
+    }
+
+    &-detail-title {
+        font-size: 2.5rem;
+    }
+
+    &-detail.price {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &-detail-discount {
+        border: 1px solid red;
+        border-radius: 4pex;
+        color: red;
+        margin-left: 0.5rem;
+        font-size: 2rem;
+        padding: 0 0.125rem;
+        display: flex;
+        align-items: center;
+    }
+    &-detail-quantity {
+        border: 1px solid red;
+        border-radius: 4pex;
+        color: red;
+        margin-left: 0.5rem;
+        font-size: 2rem;
+        padding: 0 0.125rem;
+        display: flex;
+        align-items: center;
+    }      
+}
+
+    .button-73 {
+        appearance: none;
+        background-color: #FFFFFF;
+        border-radius: 40em;
+        border-style: none;
+        box-shadow: #ffffff 0 -12px 6px inset;
+        box-sizing: border-box;
+        color: #000000;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system,sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: -.24px;
+        margin: 0;
+        outline: none;
+        padding: 1rem 1.3rem;
+        quotes: auto;
+        text-align: center;
+        text-decoration: none;
+        transition: all .15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+        .button-73:hover {
+        background-color: #38a5dc;
+        box-shadow: #88d1ffc7 0 -6px 8px inset;
+        transform: scale(1.125);
+    }
+
+        .button-73:active {
+        transform: scale(1.025);
+    }
+
+        @media (min-width: 768px) {
+        .button-73 {
+            display: flex;
+            font-size: 1vw;
+            padding: .5vw .5vw;
+    }
+}
+
+:root {
+    --arrow-bg: rgb(0, 0, 0);
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+    --option-bg: rgb(255, 255, 255);
+    --select-bg: rgb(255, 255, 255);
+}
+* {
+        box-sizing: border-box;
+
+}
+    select {
+        /* Reset */
+        appearance: none;
+        border: 0;
+        outline: 0;
+        font: caption;
+        /* Personalize */
+        width: 9rem;
+        padding: .3rem 1rem .3rem 3rem;
+        background: var(--arrow-icon) no-repeat right  0.8em center / 1.4em, 
+        linear-gradient(to left, rgb(0 0 0) 3em, rgb(255, 255, 255) 3em);
+        color: rgb(0, 0, 0);
+        border-radius: 0.25em;
+        box-shadow: 0 0 1em 0 rgba(112 28 28);
+        cursor: pointer;
+        /* Remove IE arrow */
+        &::-ms-expand {
+        display: none;
+        }
+        /* Remove focus outline */
+        &:focus {
+        outline: none;
+        }
+        /* <option> colors */
+        option {
+        color: inherit;
+        background-color: var(--option-bg);
+        }
+}

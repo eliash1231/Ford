@@ -1,0 +1,51 @@
+  body {
+    margin: 0;
+  }
+  
+  .contenedor {
+      position: relative;
+      display: flex;
+      justify-content: space-evenly;
+      background-color: #69574b;
+      margin: 16rem auto;
+      width: 100%;
+      height: 100vh;       
+}
+  .base {
+    background-color: #222221;
+    position: absolute;
+    inset: 0;
+    top: 20%;
+    height: 60%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .c-image, .c-contenido {
+      width: 40vw;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: rgb(255, 255, 255);
+      justify-content: center;
+      
+  img {
+      width: 40vw;
+      height: 100vw;
+
+  &-product-wrapper {
+      width: 100%;
+      display: flex;
+    
+  &.left {
+      justify-content: end;
+}
+
+  &.right {
+      justify-content: start;
+}
+}
+}
+}

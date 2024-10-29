@@ -1,22 +1,16 @@
 import { Catalog } from "../../componets/Catalog/Catalog";
 import { Hero } from "../../componets/Hero/Hero";
-import { catalogMen } from "../../data/catalog";
+import { catalogMen } from "../../data/diningrooms";
 
 const heroMenPage = {
-    imageUrl: 'https://youtu.be/mwPwIR5en4o?si=oNcz6MkCl3YctebF',
-    imageText: 'Lo mejor  en velocidad',
-    headline: 'THE DREAM FORD GT',
-    button: {
-        href: '/',
-        label: 'ORDENAR'
-    }
-
+    imageUrl: 'https://admin.alfgroup.com/writable/images/Sale%20Contemporary.jpg',
+    imageText: 'Muebles OG',
 };
 
 const MenPage = () => {
-    return <>
-    <iframe width="1517" height="614" src="https://www.youtube.com/embed/mwPwIR5en4o?autoplay=1&mute=1&controls=0&rel=0&loop=1&start=23" allow="autoplay;" title="YouTube video player" frameBorder="1.44"></iframe>
-        <Hero {...heroMenPage}/>
+    return <> 
+    
+
         <Catalog productList={catalogMen} />
     </>
 }

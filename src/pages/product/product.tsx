@@ -1,33 +1,38 @@
 import { useParams } from 'react-router-dom';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import './product.styles.scss';
 import EmblaCarousel from '../../componets/EmblaCarousel/EmblaCarousel';
 import { useContext, useEffect, useState } from 'react';
-import { catalogMen } from '../../data/catalog';
 import { ProductCardProps } from '../../componets/ProductCard/ProductCart';
 import ReactStars from 'react-stars';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Catalog } from '../../componets/Catalog/Catalog';
 import { ShoppingCartContext } from '../../componets/providers/ShoppingCartContext';
 import { setToLocalStorage } from '../../utils/localStorage';
+import { catalogMen } from '../../data/diningrooms';
+import { catalogBedrooms } from '../../data/bedrooms';
+import { catalogEntertainmentcenter } from '../../data/entertainmentcenter';
+import { catalogModerntables } from '../../data/moderntables';
+import { FavoritesContext } from '../../componets/providers/FavoritesContext';
 
 interface ProductFormProps {
     quantity: number;
 }
 
 const PRODUCT_LIST_KEY = "PRODUCT_LIST_KEY"
+const FAVORITES_LIST_KEY = "FAVORITES_LIST_KEY";
 
 const ProductPage = () => {
     const { productList, setProductList } = useContext(ShoppingCartContext);
+    const { favoritesList, setFavoritesList } = useContext(FavoritesContext);
     const { register, handleSubmit } = useForm<ProductFormProps>();
     const params = useParams();
     const [ product, setProduct ] = useState<ProductCardProps>();
 
     useEffect (() => {
-        const result = catalogMen.find((product) => {
+        const catalogs = catalogMen.concat(catalogModerntables, catalogBedrooms, catalogEntertainmentcenter,);
+        const result = catalogs.find((product) => {
             return product.id === params.productId
         });
         if (result) {
@@ -42,6 +47,12 @@ const ProductPage = () => {
         }
     }, [productList]);
 
+    useEffect(() => {
+        if (favoritesList && favoritesList.length > 0) {
+            setToLocalStorage(FAVORITES_LIST_KEY, favoritesList);
+        }
+    }, [favoritesList]);
+
     const findProduct = () => {
         // Si lo encuentra regresa la posicion, sino regresa un -1
         const result = productList?.findIndex((productSearch: ProductCardProps) => 
@@ -50,6 +61,14 @@ const ProductPage = () => {
 
         return result;
         
+        }
+
+        const findProductFromFavorites = () => {
+            // Si lo encuentra regresa la posicion, sino regresa un -1
+            const result = favoritesList.findIndex((productSearch: ProductCardProps) => 
+                productSearch.id === product?.id
+            );
+            return result;
         }
 
     const onSubmit: SubmitHandler<ProductFormProps> = (data) => {
@@ -71,11 +90,32 @@ const ProductPage = () => {
             setProductList([...productList]);
 
     }
-    toast("Producto añadido al carrito")
+    toast.info("Producto añadido al carrito")
     };
+    
+    const addToFavorites = () => {
+        const productIndex = findProductFromFavorites();
+        if (productIndex === -1) { // Cuando no existe, lo añade a la lista
+            setFavoritesList(
+                [
+                    ...favoritesList,
+                    {
+                        ...product,
+                        quantity: Number(1)
+                    }
+                ]
+            );
+        } else { // Cuando existe, solo modificalo
+            favoritesList[productIndex].quantity = 
+                Number(favoritesList[productIndex].quantity) + 
+                Number(1);
+            setFavoritesList([...favoritesList]);
+        }
+        toast.info("Producto añadido a favoritos");
+    }
 
     if (!product) {
-        return <div>Este veiculo esta agotado</div>;
+        return <div>Este articulo esta agotado</div>;
     }
 
     return <div className='product-page'>
@@ -104,12 +144,15 @@ const ProductPage = () => {
                     </select>
                     <button className="button-73" 
                             role="button">Agregar al carrito</button>
+                   <button className="button-73" role="button" onClick={addToFavorites}>
+                                Agregar a favoritos
+                        </button>
                     </label>
                 </form>
             
             </div> 
         </div> 
-        <label>¿Cuál es el tren motriz adecuado para mí?</label>
+        <label>CARACTERISTICAS Y ACABADOS</label>
         <Catalog productList={catalogMen.slice(0,3)}/>
         <ToastContainer
         position="top-right"

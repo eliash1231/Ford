@@ -5,8 +5,8 @@ import './Hero.styles.scss';
 interface HeroProps {
      imageUrl: string;
      imageText: string;
-     headline: string;
-     button: ButtonLinkProps;
+     headline?: string;
+     button?: ButtonLinkProps;
 }
 
 const Hero: FC<HeroProps> = ({ 
@@ -19,7 +19,8 @@ const Hero: FC<HeroProps> = ({
         <img className='img-background' src={imageUrl} alt={imageText} />
         <div className='cta'>
         <h1 className='headline'>{headline}</h1>
-        <ButtonLink {...button} />
+        {button && <ButtonLink {...button}  /> }
+        
     </div>
 </div>
 

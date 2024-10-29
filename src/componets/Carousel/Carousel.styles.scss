@@ -1,6 +1,8 @@
 .carousel {
     display: flex;
     flex-direction: column;
+    background-color: #222221;
+    background-size: cover;
 
     &-title {
         font: 2rem "Fira Sans", sans-serif;
@@ -20,6 +22,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        padding: 90px;
     }
     
     &-Carousel-trendingProducts {

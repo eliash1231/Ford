@@ -4,6 +4,11 @@ import { MenPage } from "../pages/men/men";
 import { ProductPage } from "../pages/product/product";
 import { ShoppingCartPage } from "../pages/shopping-cart/shoppingCart";
 import { Checkout } from "../pages/checkout/checkout";
+import { BedroomsPage } from "../pages/bedrooms/bedrooms";
+import { ModerntablesPage } from "../pages/moderntables/moderntables";
+import { EntertainmentcenterPage } from "../pages/salas/entertainmentcenter";
+import { FavoritesPage } from "../pages/favorites/favorites";
+
 
 
 const router = createBrowserRouter([
@@ -14,16 +19,20 @@ const router = createBrowserRouter([
         ),
     },
     {
-        path: "Vehiculos",
+        path: "centro-entretenimiento",
+        element: <EntertainmentcenterPage />,
+    },
+    {
+        path: "comedores-modernos",
         element: <MenPage />,
     },
     {
-        path: "soporte_servicio",
-        element: <MenPage />,
+        path: "dormitorios-modernos",
+        element: <BedroomsPage />,
     },
     {
-        path: "historia",
-        element: <MenPage />,
+        path: "mesitas-modernas",
+        element: <ModerntablesPage />,
     },
     {
         path:"product/:productId",
@@ -32,6 +41,10 @@ const router = createBrowserRouter([
     {
         path: "shopping-cart",
         element: <ShoppingCartPage />
+    },
+    {
+        path: "favorites",
+        element: <FavoritesPage />
     },
     {
         path: "checkout",

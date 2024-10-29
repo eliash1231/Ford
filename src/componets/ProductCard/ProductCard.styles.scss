@@ -2,15 +2,15 @@
     display: flex;   
     max-width: 90vw;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     margin-bottom: 4vw;
     text-align: center;
     align-items: center;
 
     &-img {
-        width: 70%;
-        height: 30rem;
-        max-height: 35rem;
+        width: 75%;
+        height: 25rem;
+        max-height: 40rem;
         text-align: center;
         
     }
@@ -30,15 +30,15 @@
     }
 
     &-discount {
-        border: 1px solid rgb(255, 255, 255);
+        border: 1px solid rgb(0, 0, 0);
         border-radius: 4px;
-        color: rgb(255, 255, 255);
+        color: rgb(255, 0, 0);
         margin-left: 0.5rem;
         font-size: 14px;
         padding: 0 0.125rem;
     }
 
-    &:hover {
-        box-shadow: rgb(0, 0, 0) 0px 30px 40px 10px;
-    }
+    //&:hover {
+        //box-shadow: rgb(0, 0, 0) 10px 10px 10px 10px;
+    //}
 }

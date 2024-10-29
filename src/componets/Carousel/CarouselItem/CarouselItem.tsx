@@ -7,13 +7,11 @@ import './CarouselItem.styles.scss';
 export interface CarouselItemProps {
     imageUrl: string;
     title: string;
-    subtitle?: string;
 }
 
 const CarouselItem: FC<CarouselItemProps> = ({
     imageUrl,
     title,
-    subtitle
 
 }) => {
     return <div className='carousel-item'>
@@ -23,8 +21,8 @@ const CarouselItem: FC<CarouselItemProps> = ({
         <div className='carousel-item-tag'>
             <Tag 
                 color='white'
-                backgroundColor='#0068d0'
-                label={title} subtitle={subtitle} />
+                backgroundColor='#69574b'
+                label={title} />
         </div>
     </div>
 }

@@ -1,15 +1,16 @@
 $carousel-item-heigh: 15rem;
 
 .carousel-item {
+    display: flex;
     flex: 1%;
     height: 35rem;
-    display: inline-block;
-    margin: 30px;
+    //margin: 30px;
 
     &-image {
         width: 100%;
-        height: 40rem;
-        max-height: 30rem;
+        height: 100rem;
+        max-height: 35rem;
+        padding: 40px;
         
     }
 
@@ -17,5 +18,15 @@ $carousel-item-heigh: 15rem;
         position: relative;
         bottom: -1rem;
         left: 0rem;
+    }
+
+    .trendingProducts{
+        &-image {
+            width: 100%;
+            height: 100rem;
+            max-height: 80rem;
+            padding: 70px;
+
+        }
     }
 }

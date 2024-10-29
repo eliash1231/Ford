@@ -6,17 +6,17 @@
 
     &-body {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         margin-bottom: 3rem;
         align-items: stretch;
-        background: linear-gradient(135deg, rgba(13, 105, 145, 0.486), rgba(157, 16, 16, 0.519));
+        background: linear-gradient(135deg, rgb(0, 0, 0), rgb(255, 255, 255));
 
     }
 
     &-carousel,
     &-detail-wrapper {
         display: flex;
-        width: 50%;
+        width: 100%;
         padding: 1rem;
         height: max-content;
         flex-direction: column;
@@ -24,11 +24,12 @@
         justify-content: center;
 
         img {
-            height: calc(65vh - 18px);
+            height: calc(100vh - 93px);
             // aspect-ratio: 2 / 1;
             width: 100%;
             object-fit: cover;
         }
+        
     }
 
     &-detail-price-wrapper {

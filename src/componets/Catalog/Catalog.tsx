@@ -20,7 +20,7 @@ const Catalog: FC<CatalogProps>  = ({
                 <div className={`catalog-product-wrapper ${index % 2 === 0 ? 'left' : 'right'}`}><ProductCard {...product} /></div>
             ):
             <div>lo sentimos,
-                pero no se encuentra este veiculo por el momento
+                pero no se encuentra este Mueble por el momento
             </div>
         }
 

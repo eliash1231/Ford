@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { ShoppingCartContext } from "../../componets/providers/ShoppingCartContext";
 import { ProductCardProps } from "../../componets/ProductCard/ProductCart";
-
 import './shoppingCart.styles.scss';
 import { setToLocalStorage } from "../../utils/localStorage";
 import { ButtonLink } from "../../componets/ButtonLink/ButtonLink";

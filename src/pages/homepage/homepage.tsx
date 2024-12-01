@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import './homepage.styles.scss';
 
 const heroProps = {
-    imageUrl:'https://admin.alfgroup.com/writable/images/Home%20office%20Contemporary.jpg',
+    imageUrl:'https://cimejal.com.mx/blog/wp-content/uploads/2024/01/muebles-2024.jpeg',
     imageText: 'Muebles OG',
 
 };

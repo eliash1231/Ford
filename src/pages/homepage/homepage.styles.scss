@@ -1,51 +1,96 @@
-  body {
-    margin: 0;
-  }
-  
-  .contenedor {
-      position: relative;
-      display: flex;
-      justify-content: space-evenly;
-      background-color: #69574b;
-      margin: 16rem auto;
-      width: 100%;
-      height: 100vh;       
+body {
+  margin: 0;
 }
-  .base {
-    background-color: #222221;
-    position: absolute;
-    inset: 0;
-    top: 20%;
-    height: 60%;
-    left: 0;
-    right: 0;
-    z-index: 1;
+
+.contenedor {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #69574b;
+  margin: 16rem auto;
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+.base {
+  background-color: #222221;
+  position: absolute;
+  inset: 0;
+  top: 20%;
+  height: 60%;
+  z-index: 1;
+}
+
+.c-image, .c-contenido {
+  width: 40vw;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  justify-content: center;
+}
+
+.c-image img {
+  width: 40vw;
+  height: 100vw;
+}
+
+.c-product-wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.c-product-wrapper.left {
+  justify-content: end;
+}
+
+.c-product-wrapper.right {
+  justify-content: start;
+}
+
+/* Media Queries para Tablet */
+@media (max-width: 1024px) {
+  .contenedor {
+    flex-direction: column;
+    height: auto;
+    margin: 8rem auto;
   }
 
   .c-image, .c-contenido {
-      width: 40vw;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: rgb(255, 255, 255);
-      justify-content: center;
-      
-  img {
-      width: 40vw;
-      height: 100vw;
+    width: 60vw;
+  }
 
-  &-product-wrapper {
-      width: 100%;
-      display: flex;
-    
-  &.left {
-      justify-content: end;
+  .c-image img {
+    width: 60vw;
+    height: auto;
+  }
 }
 
-  &.right {
-      justify-content: start;
-}
-}
-}
+/* Media Queries para Móvil */
+@media (max-width: 768px) {
+  .contenedor {
+    display: flex;
+    margin: 4rem auto;
+    padding: 2rem;
+    flex-direction: column-reverse;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+
+  .c-image, .c-contenido {
+    width: 80vw;
+  }
+
+  .c-image img {
+    width: 80vw;
+    height: auto;
+  }
+
+  .right {
+    flex-direction: column;
+  }
 }

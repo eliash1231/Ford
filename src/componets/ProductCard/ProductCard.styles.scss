@@ -3,13 +3,13 @@
     max-width: 90vw;
     text-decoration: none;
     color: rgb(0, 0, 0);
-    margin-bottom: 4vw;
     text-align: center;
     align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &-img {
-        width: 75%;
-        height: 25rem;
+        width: 80%;
+        height: 45rem;
         max-height: 40rem;
         text-align: center;
         
@@ -38,7 +38,9 @@
         padding: 0 0.125rem;
     }
 
-    //&:hover {
-        //box-shadow: rgb(0, 0, 0) 10px 10px 10px 10px;
-    //}
+    &:hover {
+        box-shadow: rgb(42, 42, 42) 7px 7px 7px 7px;
+        transform: translateY(-10px);
+        
+    }
 }

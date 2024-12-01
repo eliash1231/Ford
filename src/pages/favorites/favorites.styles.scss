@@ -30,10 +30,10 @@ h1 {
     justify-content: space-between;
     background-color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    margin: 1rem 0;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 30px auto;
+    padding: 20px;
 
     &:hover {
         transform: translateY(-2px);
@@ -43,9 +43,9 @@ h1 {
 
 /* Imagen de producto */
 .shopping-cart-page-product-image img {
-    width: 80px;
-    height: auto;
-    border-radius: 8px;
+    width: 350px;
+    height: 100%;
+    border-radius: 80px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -53,16 +53,18 @@ h1 {
 .shopping-cart-page-product-desc {
     flex: 1;
     margin: 0 1.5rem;
-    font-size: 1rem;
-    color: #666;
+    color: #000000;
     font-family: 'Lato', sans-serif;
+    padding: 20px;
+    
 }
 
 /* Precio del producto */
 .shopping-cart-page-product-price {
     font-weight: bold;
-    font-size: 1.2rem;
     color: #444;
+    margin: 30px auto;
+    padding: 20px;
 }
 
 /* Botón de eliminar */
@@ -71,7 +73,7 @@ button.dark {
     color: #ffffff;
     border: none;
     border-radius: 6px;
-    padding: 0.5rem 1rem;
+    padding: 2rem 5rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -135,8 +137,8 @@ button.dark {
     }
 
     .shopping-cart-page-product {
-        padding: 1rem;
-        margin: 0.5rem 0;
+        margin: 130px auto;
+        padding: 20px;
     }
 
     .shopping-cart-page-product-desc {

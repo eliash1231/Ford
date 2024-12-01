@@ -10,7 +10,7 @@ const heroMenPage = {
 const MenPage = () => {
     return <> 
     
-
+        <Hero {...heroMenPage}/>
         <Catalog productList={catalogMen} />
     </>
 }
